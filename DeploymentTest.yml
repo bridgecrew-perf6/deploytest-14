@@ -3,24 +3,23 @@ kind: Deployment
 metadata:
  name: hello-deploy
 spec:
- replicas: 10
+ replicas: 2
  selector:
   matchLabels:
-   app:hello-deploy
+   app: hello-app
  minReadySeconds: 10
  strategy:
-  type: RolloingUpdate
+  type: RollingUpdate
   rollingUpdate:
    maxUnavailable: 1
    maxSurge: 1
  template:
   metadata:
    labels:
-    app: hello-deploy
+    app: hello-app
   spec:
    containers:
     - name: hello-pod
-     image: pradeepkumar2690/dct:signed
-     ports:
-      - containerPort: 80
-   
+      image: pradeepkumar2690/dct:signed
+      ports:
+       - containerPort: 80
