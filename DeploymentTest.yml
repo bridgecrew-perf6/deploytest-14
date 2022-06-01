@@ -20,6 +20,6 @@ spec:
   spec:
    containers:
     - name: hello-pod
-      image: pradeepkumar2690/dct:signed
+      image: nginx
       ports:
        - containerPort: 80
